@@ -32,20 +32,17 @@
             <ion-card-title>{{ result.nom }} </ion-card-title>
           </ion-card-header>
           <ion-card-content>
-            
             Nombre d'habitants : {{ result.population}}<br>
             <div  v-for="codePostal in result.codesPostaux" :key="codePostal"> Code postal :  {{ codePostal }}</div>
             Code département : {{ result.codeDepartement}}<br>
             Code région : {{ result.codeRegion}}<br>
-            <!-- Département : {{ result.departement.nom}}<br/>
-            Région : {{ result.region.nom}}<br/><br/> -->
-
           </ion-card-content>
       </ion-card>
     </div>
     </ion-content>
   </ion-page>
 </template>
+
 <script>
 import { IonPage, IonContent, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonSearchbar, IonSkeletonText } from '@ionic/vue';
 import Header from '@/components/Header';
@@ -100,7 +97,7 @@ export default  {
         .catch((error) => {
           console.log(error);
             this.skeleton = false;
-            this.displayError("Aucun résulat, veuillez vérifier votre saisie. ");
+            this.displayError("Une erreur est apparue, veuillez vérifier votre saisie ou réessayer plus tard. ");
         })
     }
   }

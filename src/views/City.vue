@@ -88,13 +88,17 @@ export default  {
         .then((response) =>{
             this.skeleton = false;
             if(response.data.length == 0){
-              this.displayError("Aucun résultat")
+              this.displayError("Aucun résultat, veuillez vérifier votre saisie.")
             }
             this.results = response.data;
             this.results.forEach(element => {
               element.population = new Intl.NumberFormat().format(element.population)
             });
-
+        })
+        .catch((error) => {
+          console.log(error);
+            this.skeleton = false;
+            this.displayError("Une erreur est apparue, veuillez vérifier votre saisie ou réessayer plus tard. ");
         })
       }
 
@@ -104,13 +108,17 @@ export default  {
         .then((response) =>{
             this.skeleton = false;
             if(response.data.length == 0){
-              this.displayError("Aucun résultat")
+              this.displayError("Aucun résultat,  veuillez vérifier votre saisie.")
             }
             this.results = response.data;
             this.results.forEach(element => {
               element.population = new Intl.NumberFormat().format(element.population)
             });
-
+        })
+        .catch((error) => {
+          console.log(error);
+            this.skeleton = false;
+            this.displayError("Une erreur est apparue, veuillez vérifier votre saisie ou réessayer plus tard. ");
         })
       }
     }
