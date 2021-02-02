@@ -24,11 +24,11 @@ const routes = [
       },
       {
         path: 'commune',
-        component: () => import('@/views/Commune.vue')
+        component: () => import('@/views/City.vue')
       },
       {
         path: 'departement',
-        component: () => import('@/views/Departement.vue')
+        component: () => import('@/views/Department.vue')
       },
       {
         path: 'region',
