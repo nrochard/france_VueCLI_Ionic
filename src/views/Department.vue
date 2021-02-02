@@ -26,21 +26,22 @@
         </div>
       </div>
 
-      <!-- <ion-card v-for="result in results" :key="result">
+      <ion-card v-for="result in results" :key="result">
           <ion-card-header>
             <ion-card-subtitle>Commune</ion-card-subtitle>
             <ion-card-title>{{ result.nom }} </ion-card-title>
           </ion-card-header>
           <ion-card-content>
+            
             Nombre d'habitants : {{ result.population}}<br>
-            Département : {{ result.departement.nom}}<br/>
-            Région : {{ result.region.nom}}<br/><br/>
-            <div v-if="result.codesPostaux.length == 1" ><ion-card-subtitle v-for="codePostal in result.codesPostaux" :key="codePostal"> Code postal :  {{ codePostal }}</ion-card-subtitle> </div>
-            <div  v-if="result.codesPostaux.length > 1">
-              <ion-card-subtitle>Codes postaux :</ion-card-subtitle>
-              <ion-card-subtitle v-for="codePostal in result.codesPostaux" :key="codePostal"> {{ codePostal }}</ion-card-subtitle> </div>
+            <div  v-for="codePostal in result.codesPostaux" :key="codePostal"> Code postal :  {{ codePostal }}</div>
+            Code département : {{ result.codeDepartement}}<br>
+            Code région : {{ result.codeRegion}}<br>
+            <!-- Département : {{ result.departement.nom}}<br/>
+            Région : {{ result.region.nom}}<br/><br/> -->
+
           </ion-card-content>
-      </ion-card> -->
+      </ion-card>
     </div>
     </ion-content>
   </ion-page>
@@ -83,16 +84,23 @@ export default  {
         axios
         .get("https://geo.api.gouv.fr/departements/" + this.nameDepartment +"/communes")
         .then((response) =>{
-            console.log(response.data)
+            // console.log(response.data)
             this.skeleton = false;
-            if(response.data.length == 0){
-              this.displayError("Aucun résultat")
-            }
             this.results = response.data;
-            this.results.forEach(element => {
-              element.population = new Intl.NumberFormat().format(element.population)
-            });
+            console.log(this.results)
+            // if(response.data.length == 0){
+            //   this.displayError("Aucun résultat, veuillez vérifier votre saisie")
+            // }
 
+            this.results.forEach(element => {
+            element.population = new Intl.NumberFormat().format(element.population)
+           });
+
+        })
+        .catch((error) => {
+          console.log(error);
+            this.skeleton = false;
+            this.displayError("Aucun résulat, veuillez vérifier votre saisie. ");
         })
     }
   }
@@ -109,5 +117,15 @@ export default  {
 .card{
   background-color: #023189;
   /* color: white; */
+}
+
+a{
+  text-decoration: none;
+  color: rgb(133, 133, 133);
+  font-weight: bold;
+}
+
+a:hover{
+  color: rgb(124, 124, 124);
 }
 </style>

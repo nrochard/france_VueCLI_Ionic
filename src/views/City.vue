@@ -14,7 +14,7 @@
           </ion-card-content>
         </ion-card>
 
-        <ion-searchbar placeholder="Rechercher"  @search.prevent="getCities($event.target.value)"></ion-searchbar>
+        <ion-searchbar placeholder="Rechercher"  @search.prevent="getCity($event.target.value)"></ion-searchbar>
   
       <div v-if="skeleton">
         <div class="ion-padding custom-skeleton">
