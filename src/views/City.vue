@@ -26,6 +26,11 @@
         </div>
       </div>
 
+      <ion-text v-if="results">
+        <p v-if="results.length > 1">{{ results.length }} résultats</p>
+        <p v-if="results.length <= 1">{{ results.length }} résultat</p>
+      </ion-text>
+
       <ion-card v-for="result in results" :key="result">
           <ion-card-header>
             <ion-card-subtitle>Commune</ion-card-subtitle>
@@ -48,7 +53,7 @@
 </template>
 
 <script>
-import { IonPage, IonContent, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonSearchbar, IonSkeletonText } from '@ionic/vue';
+import { IonPage, IonContent, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonSearchbar, IonSkeletonText, IonText } from '@ionic/vue';
 import Header from '@/components/Header'
 import axios from "axios";
 
@@ -61,7 +66,7 @@ export default  {
     }
   },
   name: 'City',
-  components: {   IonContent, IonPage, Header, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonSearchbar, IonSkeletonText}, 
+  components: {   IonContent, IonPage, Header, IonCard, IonCardContent, IonCardHeader, IonCardSubtitle, IonCardTitle, IonSearchbar, IonSkeletonText, IonText}, 
   methods:{
     displayError(message){
       const toast = document.createElement('ion-toast');
@@ -115,8 +120,7 @@ export default  {
               element.population = new Intl.NumberFormat().format(element.population)
             });
         })
-        .catch((error) => {
-          console.log(error);
+        .catch(() => {
             this.skeleton = false;
             this.displayError("Une erreur est apparue, veuillez vérifier votre saisie ou réessayer plus tard. ");
         })
@@ -138,5 +142,9 @@ export default  {
 .card{
   background-color: #023189;
   /* color: white; */
+}
+
+p{
+  text-align: center;
 }
 </style>
