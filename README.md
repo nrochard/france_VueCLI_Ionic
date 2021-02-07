@@ -15,5 +15,5 @@ Api used : [Découpage administratif](https://geo.api.gouv.fr/decoupage-administ
 ## What it looks like
 
 <p align="center">
-  <img width="650" height="700" src="https://github.com/nrochard/recipeApp_PHP/blob/main/public/img/screen.png">
+  <img width="300" height="650" src="https://github.com/nrochard/france_VueCLI_Ionic/blob/main/public/assets/img/screen.png">
 </p>
