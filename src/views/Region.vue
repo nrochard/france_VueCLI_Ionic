@@ -100,11 +100,6 @@ components: {   IonContent, IonPage, Header, IonCard, IonCardContent, IonCardHea
 </script>
 
 <style scoped>
-.native-input{
-  background-color: antiquewhite;
-    margin: 0 20px;
-}
-
 .card{
   background-color: #023189;
 }

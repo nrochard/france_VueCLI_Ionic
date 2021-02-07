@@ -53,6 +53,6 @@ export default {
 
 <style scoped>
 .tab-selected{
-  color: white !important;
+  color: #fd0522ea !important;
 }
 </style>

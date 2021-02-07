@@ -1,7 +1,9 @@
 /* Ionic Variables and Theming. For more info, please see:
 http://ionicframework.com/docs/theming/ */
 
+
 /** Ionic CSS Variables **/
+@media (prefers-color-scheme: dark){
 :root {
   /** primary **/
   --ion-color-primary: #3880ff;
@@ -229,4 +231,5 @@ http://ionicframework.com/docs/theming/ */
 
     --ion-card-background: #1e1e1e;
   }
+}
 }

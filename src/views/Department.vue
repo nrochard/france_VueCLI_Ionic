@@ -10,7 +10,7 @@
             <ion-card-title>Les départements</ion-card-title>
           </ion-card-header>
           <ion-card-content style="color:white">
-          Tu peux rechercher les communes d'un département français grâce à son code. Tu peux les rechercher <a target="_blank" href="https://fr.wikipedia.org/wiki/Num%C3%A9rotation_des_d%C3%A9partements_fran%C3%A7ais">ici</a>
+          Tu peux rechercher les communes d'un département français grâce à son code. Tu peux les rechercher <a target="_blank" href="https://fr.wikipedia.org/wiki/Num%C3%A9rotation_des_d%C3%A9partements_fran%C3%A7ais">ici</a>.
           </ion-card-content>
         </ion-card>
 
@@ -104,18 +104,13 @@ export default  {
 
 
 <style scoped>
-.native-input{
-  background-color: antiquewhite;
-    margin: 0 20px;
-}
-
 .card{
   background-color: #023189;
 }
 
 a{
   text-decoration: none;
-  color: rgb(133, 133, 133);
+  color: rgb(112, 112, 112);
   font-weight: bold;
 }
 
@@ -124,6 +119,6 @@ p{
 }
 
 a:hover{
-  color: rgb(124, 124, 124);
+  color: rgb(97, 97, 97);
 }
 </style>

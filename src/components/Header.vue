@@ -2,7 +2,7 @@
     
     <ion-header collapse="condense">
         <ion-toolbar class="new-background-color">
-          <ion-img :src="'./assets/img/index.png'" class="img_header"></ion-img>
+          <ion-img :src="'./assets/img/index2.png'" class="img_header"></ion-img>
         </ion-toolbar>
       </ion-header>
 </template>
@@ -24,10 +24,15 @@ export default  {
 
 <style scoped>
 .new-background-color{
-    --background: white;
+    --background: rgb(15, 15, 15);
     border-bottom-left-radius: 20px 20px;
     border-bottom-right-radius: 20px 20px;
     padding: 10px 0;
+
+}
+
+.header-ios ion-toolbar:last-of-type{
+    --border-width: 0px
 }
 
 @media(min-width:900px){
